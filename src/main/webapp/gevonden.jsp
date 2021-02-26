@@ -1,4 +1,4 @@
-<%--
+<%@ page import="domain.model.Student" %><%--
   Created by IntelliJ IDEA.
   User: stijn
   Date: 22/02/2021
@@ -6,12 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% Student student = (Student) request.getAttribute("student"); %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <title>Student Info</title>
 </head>
 <body>
-<p id="antwoord"> <%=request.getAttribute("naam", "voornaam")%> </p>
+<p Je vroeg naar volgende gegevens:
+<%= student.getNaam()%>
+<%= student.getVoornaam()%>
+(<%= student.getLeeftijd()%> jaar):
+<%= student.getStudierichting()%>
+</p>
 
 </body>
 </html>
